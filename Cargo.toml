@@ -1,0 +1,13 @@
+[package]
+name = "fileck"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crossterm = "0.28.1"
+digest = "0.10.7"
+hex = "0.4.3"
+md-5 = "0.10.6"
+ratatui = "0.29.0"
+sha1 = "0.10.6"
+strum = { version = "0.26.3", features = ["derive"] }
