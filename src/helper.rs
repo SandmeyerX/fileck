@@ -80,12 +80,7 @@ impl Fileck {
             }
             let file_in_target = obj_in_target;
 
-            // Skip ignored files
-            if self.ignore_files.contains(&file_in_target) {
-                continue;
-            }
-
-            // Read the name and content of file and Calculate hash digest
+            // Read the filename
 
             // HACK Unsafe code here
             // Handle None value when failed to get filename
@@ -93,6 +88,17 @@ impl Fileck {
             // let filename = file_in_target.file_name()
             //     .unwrap_or_else(|| OsStr::new("FaildToGetFilename"))
             //     .to_str().unwrap();
+
+            // Skip ignored files
+
+            // TODO Add various ignore_files support
+            // Now ignore_files only support to specify filename
+            // Make it like .gitignore, which supports dir and suffix
+            if self.ignore_files.contains(&PathBuf::from(filename)) {
+                continue;
+            }
+
+            // Read the content of file and Calculate hash digest
             let content = fs::read(&file_in_target)?;
             hasher.update(&content);
             let hash_digest = hex::encode(hasher.finalize_reset());
