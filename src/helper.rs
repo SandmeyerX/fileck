@@ -1,5 +1,7 @@
 use strum::{Display, EnumIter, FromRepr};
-use md5::{Md5, Digest};
+use digest::{Digest, DynDigest};
+use hex;
+use md5::Md5;
 use sha1::Sha1;
 
 use std::path::PathBuf;
@@ -62,8 +64,8 @@ impl Fileck {
     pub fn gen_checklist(&self) -> Result<String, io::Error> {
         let mut hasher = match self.algorithm {
             // Hash::MD5 => Md5::new(),  // Error
-            Algorithms::MD5 => Sha1::new(),  // FIXME Replace SHA1 with MD5    
-            Algorithms::SHA1 => Sha1::new(),
+            Algorithms::MD5 => Box::new(Md5::new()) as Box<dyn DynDigest>,
+            Algorithms::SHA1 => Box::new(Sha1::new()) as Box<dyn DynDigest>,
         };
         let mut checklist_content = String::new();
 
@@ -93,9 +95,9 @@ impl Fileck {
             //     .to_str().unwrap();
             let content = fs::read(&file_in_target)?;
             hasher.update(&content);
-            let hash = format!("{:x}", hasher.finalize_reset());
+            let hash_digest = hex::encode(hasher.finalize_reset());
 
-            checklist_content.push_str(&format!("{};{}\n", filename, hash));
+            checklist_content.push_str(&format!("{};{}\n", filename, hash_digest));
         }
 
         // Write to checklist file
