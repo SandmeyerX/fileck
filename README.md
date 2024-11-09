@@ -5,7 +5,9 @@
     <a href="https://github.com" target="_blank">
       <img width="100%" src="statics/banner_start_creating.png" alt="My start creating banner"></a>
   </p>
+
 📍中文 | [English](docs/README_en.md) | [Deutsch](docs/README_de.md) | [Français](docs/README_fr.md) | [العربية](docs/README_ar.md) <br>
+
 
 <div>
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/sandmeyerx/fileck">
@@ -18,6 +20,9 @@
     <a href="https://buymeacoffee.com/sandmeyer"><img alt="Buy me a coffee" src="https://img.shields.io/badge/buy_me-coffee-6c4429?logo=buymeacoffee&logoColor=fedc07"></a>
     <a href="mailto:sandmx.work@gmail.com"><img alt="My Gmail" src="https://img.shields.io/badge/%40gmail.com-ffffff?logo=gmail"></a>
 <br>
+</div>
+<br>
+
 </div>
 
 [Fileck](https://github.com/SandmeyerX/fileck) 是一款使用Rust编写的高性能、容易上手的文件校验工具，提供以下有用的功能：
