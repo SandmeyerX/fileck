@@ -18,6 +18,7 @@
     <a href="https://buymeacoffee.com/sandmeyer"><img alt="Buy me a coffee" src="https://img.shields.io/badge/buy_me-coffee-6c4429?logo=buymeacoffee&logoColor=fedc07"></a>
     <a href="mailto:sandmx.work@gmail.com"><img alt="My Gmail" src="https://img.shields.io/badge/%40gmail.com-ffffff?logo=gmail"></a>
 <br>
+</div>
 
 [Fileck](https://github.com/SandmeyerX/fileck) 是一款使用Rust编写的高性能、容易上手的文件校验工具，提供以下有用的功能：
 
